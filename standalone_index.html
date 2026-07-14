@@ -1,0 +1,1256 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gaurav Mehndi Artist | Professional Luxury Bridal Henna Designer</title>
+    
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Marcellus&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS v3 CDN (Provides extreme flexibility for direct file opening) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                green: '#0f3d2e',
+                'green-dark': '#072219',
+                'green-light': '#165340',
+                gold: '#d4af37',
+                'gold-dark': '#aa861d',
+                'gold-light': '#f3e2a9',
+                cream: '#fcf9f2',
+                'cream-dark': '#f5eedc',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Marcellus', 'serif'],
+              display: ['Playfair Display', 'serif'],
+              mono: ['Fira Code', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Lucide Icons Library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- GSAP & ScrollTrigger Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis Smooth Scroll Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <style>
+      /* Smooth scrolling variables */
+      html.lenis {
+        height: auto;
+      }
+      .lenis-smooth {
+        scroll-behavior: auto !important;
+      }
+      .lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+      }
+      .lenis-stopped {
+        overflow: hidden;
+      }
+
+      /* Custom scrollbar styling */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #072219;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #d4af37;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #f3e2a9;
+      }
+
+      /* Gold glow effects */
+      @keyframes gold-glow {
+        0%, 100% {
+          box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+        }
+      }
+      .glow-gold {
+        animation: gold-glow 4s infinite ease-in-out;
+      }
+
+      /* Custom Glassmorphism */
+      .glass-panel {
+        background: rgba(15, 61, 46, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(212, 175, 55, 0.15);
+      }
+
+      /* Simple smooth transition utility */
+      .smooth-transition {
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+    </style>
+  </head>
+  <body class="bg-brand-green-dark text-white font-sans selection:bg-brand-gold selection:text-brand-green-dark overflow-x-hidden">
+
+    <!-- 1. Custom Interactive Mouse Follower Ring (Desktop Only) -->
+    <div id="cursor-ring" class="hidden lg:block fixed w-6 h-6 border border-brand-gold rounded-full pointer-events-none z-50 smooth-transition -translate-x-1/2 -translate-y-1/2 opacity-0"></div>
+    <div id="cursor-dot" class="hidden lg:block fixed w-1.5 h-1.5 bg-brand-gold rounded-full pointer-events-none z-50 fixed -translate-x-1/2 -translate-y-1/2 opacity-0"></div>
+
+    <!-- 2. Full Screen Luxury Preloader -->
+    <div id="preloader" class="fixed inset-0 bg-brand-green-dark z-50 flex flex-col items-center justify-center transition-all duration-1000 ease-[cubic-bezier(0.76,0,0.24,1)]">
+      <div class="relative w-24 h-24 border border-brand-gold/30 rounded-full flex items-center justify-center mb-8 glow-gold">
+        <div class="absolute w-20 h-20 border border-dashed border-brand-gold/20 rounded-full animate-spin" style="animation-duration: 10s;"></div>
+        <span class="font-serif text-brand-gold text-2xl font-light tracking-[0.2em]">G</span>
+      </div>
+      <h2 class="font-serif text-white text-base md:text-lg tracking-[0.3em] uppercase text-center animate-pulse">
+        GAURAV MEHNDI ARTIST
+      </h2>
+      <p class="font-sans text-[9px] uppercase tracking-[0.4em] text-brand-gold mt-2 text-center">
+        The Bridal Masterpiece
+      </p>
+    </div>
+
+    <!-- 3. Sticky Transparent Header -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-40 transition-all duration-500 bg-transparent py-6 border-b border-transparent">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2 group cursor-pointer scroll-link">
+          <div class="w-10 h-10 rounded-full border border-brand-gold/50 flex items-center justify-center bg-brand-green/30 group-hover:border-brand-gold smooth-transition">
+            <span class="text-brand-gold font-serif text-lg font-medium">G</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif text-brand-gold font-medium tracking-widest text-base md:text-lg leading-tight uppercase group-hover:text-brand-gold-light smooth-transition">
+              Gaurav
+            </span>
+            <span class="font-sans text-[10px] text-white/60 tracking-[0.25em] uppercase leading-none">
+              Mehndi Artist
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="#home" class="scroll-link font-sans text-xs uppercase tracking-widest text-white/80 hover:text-brand-gold smooth-transition relative py-1 group">Home</a>
+          <a href="#about" class="scroll-link font-sans text-xs uppercase tracking-widest text-white/80 hover:text-brand-gold smooth-transition relative py-1 group">About</a>
+          <a href="#services" class="scroll-link font-sans text-xs uppercase tracking-widest text-white/80 hover:text-brand-gold smooth-transition relative py-1 group">Services</a>
+          <a href="#featured" class="scroll-link font-sans text-xs uppercase tracking-widest text-white/80 hover:text-brand-gold smooth-transition relative py-1 group">Featured</a>
+          <a href="#gallery" class="scroll-link font-sans text-xs uppercase tracking-widest text-white/80 hover:text-brand-gold smooth-transition relative py-1 group">Gallery</a>
+          <a href="#testimonials" class="scroll-link font-sans text-xs uppercase tracking-widest text-white/80 hover:text-brand-gold smooth-transition relative py-1 group">Testimonials</a>
+          <a href="#contact" class="scroll-link font-sans text-xs uppercase tracking-widest text-white/80 hover:text-brand-gold smooth-transition relative py-1 group">Contact</a>
+        </nav>
+
+        <!-- CTA button -->
+        <div class="hidden lg:block">
+          <a href="#contact" class="scroll-link px-5 py-2.5 bg-brand-gold text-brand-green-dark font-sans text-xs uppercase tracking-widest font-semibold hover:bg-brand-gold-light hover:scale-105 active:scale-95 smooth-transition rounded shadow-lg block text-center">
+            Book Now
+          </a>
+        </div>
+
+        <!-- Mobile Drawer Menu Trigger -->
+        <button id="mobile-menu-btn" class="lg:hidden text-brand-gold p-2 rounded border border-brand-gold/10 bg-brand-green/20">
+          <i data-lucide="menu" id="menu-icon"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Drawer (Inside Header Container) -->
+      <div id="mobile-drawer" class="fixed top-[73px] left-0 w-full bg-brand-green-dark/95 backdrop-blur-lg border-b border-brand-gold/10 max-h-0 opacity-0 overflow-hidden smooth-transition z-30 flex flex-col px-6 gap-4">
+        <a href="#home" class="scroll-link font-sans text-xs uppercase tracking-[0.2em] text-white/80 hover:text-brand-gold py-2 border-b border-brand-gold/5">Home</a>
+        <a href="#about" class="scroll-link font-sans text-xs uppercase tracking-[0.2em] text-white/80 hover:text-brand-gold py-2 border-b border-brand-gold/5">About</a>
+        <a href="#services" class="scroll-link font-sans text-xs uppercase tracking-[0.2em] text-white/80 hover:text-brand-gold py-2 border-b border-brand-gold/5">Services</a>
+        <a href="#featured" class="scroll-link font-sans text-xs uppercase tracking-[0.2em] text-white/80 hover:text-brand-gold py-2 border-b border-brand-gold/5">Featured</a>
+        <a href="#gallery" class="scroll-link font-sans text-xs uppercase tracking-[0.2em] text-white/80 hover:text-brand-gold py-2 border-b border-brand-gold/5">Gallery</a>
+        <a href="#testimonials" class="scroll-link font-sans text-xs uppercase tracking-[0.2em] text-white/80 hover:text-brand-gold py-2 border-b border-brand-gold/5">Testimonials</a>
+        <a href="#contact" class="scroll-link font-sans text-xs uppercase tracking-[0.2em] text-white/80 hover:text-brand-gold py-2 border-b border-brand-gold/5">Contact</a>
+        <a href="#contact" class="scroll-link w-full my-4 py-3 bg-brand-gold text-brand-green-dark font-sans text-xs uppercase tracking-widest font-semibold text-center rounded">
+          Book Appointment
+        </a>
+      </div>
+    </header>
+
+    <!-- 4. Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-green-dark">
+      <!-- Background zoom image -->
+      <div class="absolute inset-0 z-0">
+        <img src="./src/assets/images/mehndi_hero_1784045414813.jpg" alt="Artistry" class="w-full h-full object-cover object-center opacity-45 transform scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-green-dark/70 via-brand-green-dark/80 to-brand-green-dark"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-green-dark/65 via-transparent to-brand-green-dark/65"></div>
+      </div>
+
+      <!-- Floating particle details -->
+      <div class="absolute inset-0 pointer-events-none z-10 overflow-hidden opacity-20">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 border border-brand-gold/30 rounded-full animate-spin" style="animation-duration: 40s;"></div>
+        <div class="absolute top-1/3 left-1/3 w-[500px] h-[500px] border border-dashed border-brand-gold/20 rounded-full animate-spin" style="animation-duration: 60s; animation-direction: reverse;"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="relative z-20 max-w-5xl mx-auto px-6 text-center flex flex-col items-center mt-12">
+        <div class="flex items-center gap-2 mb-6">
+          <span class="w-8 h-[1px] bg-brand-gold"></span>
+          <span class="font-sans text-[10px] md:text-xs tracking-[0.4em] uppercase text-brand-gold font-semibold">The Art of Fine Henna</span>
+          <span class="w-8 h-[1px] bg-brand-gold"></span>
+        </div>
+
+        <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.1em] text-white leading-tight uppercase font-medium mb-6">
+          Gaurav <span class="text-brand-gold font-light">Mehndi</span><br />
+          <span class="tracking-[0.15em] font-light italic">Artist</span>
+        </h1>
+
+        <p class="font-sans text-sm sm:text-base md:text-lg text-brand-cream tracking-[0.2em] uppercase max-w-2xl mb-12 font-light">
+          Professional Bridal & Traditional Mehndi Artist
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-5 items-center justify-center w-full max-w-md mx-auto">
+          <a href="#gallery" class="scroll-link w-full sm:w-auto px-8 py-4 border border-brand-gold/40 text-brand-gold hover:border-brand-gold hover:text-white hover:bg-brand-gold/10 font-sans text-xs uppercase tracking-widest font-semibold text-center rounded smooth-transition">
+            View Portfolio
+          </a>
+          <a href="#contact" class="scroll-link w-full sm:w-auto px-8 py-4 bg-brand-gold text-brand-green-dark hover:bg-brand-gold-light hover:scale-105 shadow-lg font-sans text-xs uppercase tracking-widest font-bold text-center rounded smooth-transition">
+            Book Appointment
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <a href="#about" class="scroll-link absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 group opacity-65 hover:opacity-100 transition-opacity">
+        <span class="font-sans text-[9px] tracking-[0.3em] uppercase text-brand-cream/60 group-hover:text-brand-gold smooth-transition">Scroll to explore</span>
+        <div class="w-[18px] h-[30px] rounded-full border border-brand-cream/30 flex justify-center py-1.5">
+          <div class="w-1.5 h-1.5 rounded-full bg-brand-gold animate-bounce"></div>
+        </div>
+      </a>
+    </section>
+
+    <!-- 5. About Section -->
+    <section id="about" class="py-24 md:py-32 bg-brand-green-dark relative overflow-hidden">
+      <div class="absolute right-0 top-0 w-96 h-96 bg-brand-gold/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <!-- Left Column Image Frame -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative aspect-[3/4] w-full rounded shadow-2xl overflow-hidden group">
+              <div class="absolute inset-4 border border-brand-gold/20 z-10 pointer-events-none group-hover:border-brand-gold/50 smooth-transition"></div>
+              <img src="./src/assets/images/mehndi_bridal_1784045431694.jpg" alt="Bridal Mehndi" class="w-full h-full object-cover smooth-transition group-hover:scale-105" />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-green-dark/80 via-transparent to-transparent"></div>
+            </div>
+
+            <!-- Certified badge -->
+            <div class="absolute -bottom-6 -right-6 bg-brand-green border border-brand-gold/30 p-5 rounded-lg shadow-2xl max-w-[180px] glow-gold hidden sm:block">
+              <div class="flex items-center gap-2 mb-2 text-brand-gold">
+                <i data-lucide="award" class="w-5 h-5"></i>
+                <span class="font-serif text-xs uppercase tracking-wider font-semibold">Certified Artist</span>
+              </div>
+              <p class="font-sans text-[11px] text-white/70 leading-relaxed">
+                Using 100% natural organic henna with rich deep stain results.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column Text Details -->
+          <div class="lg:col-span-7">
+            <span class="font-sans text-[10px] tracking-[0.4em] uppercase text-brand-gold font-semibold block mb-3">MEET THE ARTIST</span>
+            <h2 class="font-serif text-3xl md:text-5xl text-white tracking-wide uppercase leading-tight mb-8">
+              The Legacy of <br />
+              <span class="text-brand-gold font-light">Gaurav Mehndi Artistry</span>
+            </h2>
+
+            <p class="font-sans text-brand-cream/80 text-sm md:text-base leading-relaxed mb-6 font-light">
+              Gaurav Mehndi Artist is a premier brand in luxurious bridal mehndi designing, renowned for creating detailed, symmetric masterpieces that reflect the rich Indian heritage. With a passion starting over a decade ago, Gaurav has transformed bridal palms into canvases of beautiful visual stories, combining classic Indian wedding symbols, detailed portrait figures, and modern geometric elegance.
+            </p>
+
+            <p class="font-sans text-brand-cream/70 text-xs md:text-sm leading-relaxed mb-12 font-light">
+              We believe that every bride deserves an exceptional and relaxing mehndi ceremony. That is why we formulate our own henna paste using premium triple-filtered organic Rajasthani Sojat leaves, mixed with pure therapeutic essential oils. This guarantees a safe application, divine soothing aroma, and an outstanding, rich dark-maroon stain.
+            </p>
+
+            <!-- Counters Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+              <div class="text-center p-5 bg-brand-green/10 rounded border border-brand-gold/10">
+                <div class="font-serif text-3xl md:text-4xl text-brand-gold font-semibold mb-1">1200+</div>
+                <div class="font-sans text-[10px] uppercase tracking-widest text-brand-cream/75">Brides Served</div>
+              </div>
+              <div class="text-center p-5 bg-brand-green/10 rounded border border-brand-gold/10">
+                <div class="font-serif text-3xl md:text-4xl text-brand-gold font-semibold mb-1">12+</div>
+                <div class="font-sans text-[10px] uppercase tracking-widest text-brand-cream/75">Years Exp</div>
+              </div>
+              <div class="text-center p-5 bg-brand-green/10 rounded border border-brand-gold/10">
+                <div class="font-serif text-3xl md:text-4xl text-brand-gold font-semibold mb-1">2500+</div>
+                <div class="font-sans text-[10px] uppercase tracking-widest text-brand-cream/75">Happy Clients</div>
+              </div>
+              <div class="text-center p-5 bg-brand-green/10 rounded border border-brand-gold/10">
+                <div class="font-serif text-3xl md:text-4xl text-brand-gold font-semibold mb-1">150+</div>
+                <div class="font-sans text-[10px] uppercase tracking-widest text-brand-cream/75">Concept Designs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Services Section -->
+    <section id="services" class="py-24 md:py-32 bg-brand-green relative overflow-hidden">
+      <div class="absolute left-1/2 -translate-x-1/2 top-1/4 w-[500px] h-[500px] bg-brand-gold/3 rounded-full blur-[150px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+          <span class="font-sans text-[10px] tracking-[0.4em] uppercase text-brand-gold font-semibold block mb-3">EXCLUSIVE SERVICES</span>
+          <h2 class="font-serif text-3xl md:text-5xl text-white tracking-wide uppercase leading-tight mb-4">
+            Bespoke <span class="text-brand-gold font-light">Mehndi Packages</span>
+          </h2>
+          <div class="w-16 h-[1px] bg-brand-gold mx-auto mb-6"></div>
+          <p class="font-sans text-brand-cream/70 text-sm font-light leading-relaxed">
+            Every pattern we create is a custom-tailored masterpiece. Browse our curated luxury services designed to match the distinct mood of your special occasion.
+          </p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Bridal Card -->
+          <div class="glass-panel p-8 rounded flex flex-col justify-between group smooth-transition relative overflow-hidden min-h-[380px]">
+            <div class="absolute top-0 left-0 w-full h-[2px] bg-brand-gold/0 group-hover:bg-brand-gold smooth-transition"></div>
+            <div>
+              <div class="flex justify-between items-start mb-6">
+                <div class="p-3 bg-brand-green-dark/60 rounded border border-brand-gold/10"><i data-lucide="crown" class="text-brand-gold w-6 h-6"></i></div>
+                <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold border border-brand-gold/20 px-2.5 py-1 rounded bg-brand-green-dark/30">Premium Package</span>
+              </div>
+              <h3 class="font-serif text-xl text-white tracking-wider uppercase mb-1 group-hover:text-brand-gold-light smooth-transition">Bridal Mehndi</h3>
+              <span class="font-serif italic text-xs text-brand-gold/70 block mb-4">The Royal Masterpiece</span>
+              <p class="font-sans text-brand-cream/70 text-xs leading-relaxed mb-6 font-light">Ultra-intricate story-telling layouts from fingertips to elbows, customized with beautiful wedding portrait figures, doli, and wedding dates.</p>
+            </div>
+            <ul class="space-y-2 pt-4 border-t border-brand-gold/10 text-[11px] text-white/70 font-sans font-light">
+              <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-brand-gold"></span>Full hands up to elbows coverage</li>
+              <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-brand-gold"></span>Custom bride & groom sketches</li>
+              <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-brand-gold"></span>Organic natural dark stain guarantee</li>
+            </ul>
+          </div>
+
+          <!-- Arabic Card -->
+          <div class="glass-panel p-8 rounded flex flex-col justify-between group smooth-transition relative overflow-hidden min-h-[380px]">
+            <div class="absolute top-0 left-0 w-full h-[2px] bg-brand-gold/0 group-hover:bg-brand-gold smooth-transition"></div>
+            <div>
+              <div class="flex justify-between items-start mb-6">
+                <div class="p-3 bg-brand-green-dark/60 rounded border border-brand-gold/10"><i data-lucide="flower-2" class="text-brand-gold w-6 h-6"></i></div>
+                <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold border border-brand-gold/20 px-2.5 py-1 rounded bg-brand-green-dark/30">Modern Elegance</span>
+              </div>
+              <h3 class="font-serif text-xl text-white tracking-wider uppercase mb-1 group-hover:text-brand-gold-light smooth-transition">Arabic Mehndi</h3>
+              <span class="font-serif italic text-xs text-brand-gold/70 block mb-4">Contemporary Flow</span>
+              <p class="font-sans text-brand-cream/70 text-xs leading-relaxed mb-6 font-light">Elegant diagonal trails, bold floral nodes, leafy branches, and geometric lattices arranged with modern, high-contrast negative space borders.</p>
+            </div>
+            <ul class="space-y-2 pt-4 border-t border-brand-gold/10 text-[11px] text-white/70 font-sans font-light">
+              <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-brand-gold"></span>Bold floral diagonal trails</li>
+              <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-brand-gold"></span>Elegant negative space borders</li>
+              <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-brand-gold"></span>Quick-drying crisp outlines</li>
+            </ul>
+          </div>
+
+          <!-- Traditional Card -->
+          <div class="glass-panel p-8 rounded flex flex-col justify-between group smooth-transition relative overflow-hidden min-h-[380px]">
+            <div class="absolute top-0 left-0 w-full h-[2px] bg-brand-gold/0 group-hover:bg-brand-gold smooth-transition"></div>
+            <div>
+              <div class="flex justify-between items-start mb-6">
+                <div class="p-3 bg-brand-green-dark/60 rounded border border-brand-gold/10"><i data-lucide="sparkles" class="text-brand-gold w-6 h-6"></i></div>
+                <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold border border-brand-gold/20 px-2.5 py-1 rounded bg-brand-green-dark/30">Heritage Classic</span>
+              </div>
+              <h3 class="font-serif text-xl text-white tracking-wider uppercase mb-1 group-hover:text-brand-gold-light smooth-transition">Traditional Mehndi</h3>
+              <span class="font-serif italic text-xs text-brand-gold/70 block mb-4">Classic Indian Heritage</span>
+              <p class="font-sans text-brand-cream/70 text-xs leading-relaxed mb-6 font-light">Dense layouts featuring beautiful concentric mandalas, peacock feathers, paisley curls, checks, and intricate jaali lace work.</p>
+            </div>
+            <ul class="space-y-2 pt-4 border-t border-brand-gold/10 text-[11px] text-white/70 font-sans font-light">
+              <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-brand-gold"></span>Symmetrical concentric mandalas</li>
+              <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-brand-gold"></span>Peacocks and jaali detailing</li>
+              <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-brand-gold"></span>Therapeutic herbal aromas</li>
+            </ul>
+          </div>
+
+          <!-- Engagement Card -->
+          <div class="glass-panel p-8 rounded flex flex-col justify-between group smooth-transition relative overflow-hidden min-h-[380px]">
+            <div class="absolute top-0 left-0 w-full h-[2px] bg-brand-gold/0 group-hover:bg-brand-gold smooth-transition"></div>
+            <div>
+              <div class="flex justify-between items-start mb-6">
+                <div class="p-3 bg-brand-green-dark/60 rounded border border-brand-gold/10"><i data-lucide="heart" class="text-brand-gold w-6 h-6"></i></div>
+                <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold border border-brand-gold/20 px-2.5 py-1 rounded bg-brand-green-dark/30">Elegant Minimal</span>
+              </div>
+              <h3 class="font-serif text-xl text-white tracking-wider uppercase mb-1 group-hover:text-brand-gold-light smooth-transition">Engagement Mehndi</h3>
+              <span class="font-serif italic text-xs text-brand-gold/70 block mb-4">Celebration of Rings</span>
+              <p class="font-sans text-brand-cream/70 text-xs leading-relaxed mb-6 font-light">Elegantly proportioned, semi-bridal designs blending fine lines, initials, and romantic ring ceremony motifs.</p>
+            </div>
+            <ul class="space-y-2 pt-4 border-t border-brand-gold/10 text-[11px] text-white/70 font-sans font-light">
+              <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-brand-gold"></span>Custom initial monogram cuffs</li>
+              <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-brand-gold"></span>Delicate ring finger highlights</li>
+              <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-brand-gold"></span>Swift application sessions</li>
+            </ul>
+          </div>
+
+          <!-- Party Card -->
+          <div class="glass-panel p-8 rounded flex flex-col justify-between group smooth-transition relative overflow-hidden min-h-[380px]">
+            <div class="absolute top-0 left-0 w-full h-[2px] bg-brand-gold/0 group-hover:bg-brand-gold smooth-transition"></div>
+            <div>
+              <div class="flex justify-between items-start mb-6">
+                <div class="p-3 bg-brand-green-dark/60 rounded border border-brand-gold/10"><i data-lucide="gift" class="text-brand-gold w-6 h-6"></i></div>
+                <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold border border-brand-gold/20 px-2.5 py-1 rounded bg-brand-green-dark/30">Bespoke Guest</span>
+              </div>
+              <h3 class="font-serif text-xl text-white tracking-wider uppercase mb-1 group-hover:text-brand-gold-light smooth-transition">Party Mehndi</h3>
+              <span class="font-serif italic text-xs text-brand-gold/70 block mb-4">Contemporary Accents</span>
+              <p class="font-sans text-brand-cream/70 text-xs leading-relaxed mb-6 font-light">Delicate, fast, chic designs optimized for family guests, bridesmaids, and friends, prioritizing modern lines.</p>
+            </div>
+            <ul class="space-y-2 pt-4 border-t border-brand-gold/10 text-[11px] text-white/70 font-sans font-light">
+              <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-brand-gold"></span>Single trail elegant bands</li>
+              <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-brand-gold"></span>Fast drying organic formula</li>
+              <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-brand-gold"></span>Ideal for bridesmaids and siblings</li>
+            </ul>
+          </div>
+
+          <!-- Festival Card -->
+          <div class="glass-panel p-8 rounded flex flex-col justify-between group smooth-transition relative overflow-hidden min-h-[380px]">
+            <div class="absolute top-0 left-0 w-full h-[2px] bg-brand-gold/0 group-hover:bg-brand-gold smooth-transition"></div>
+            <div>
+              <div class="flex justify-between items-start mb-6">
+                <div class="p-3 bg-brand-green-dark/60 rounded border border-brand-gold/10"><i data-lucide="sparkle" class="text-brand-gold w-6 h-6"></i></div>
+                <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold border border-brand-gold/20 px-2.5 py-1 rounded bg-brand-green-dark/30">Festive Bliss</span>
+              </div>
+              <h3 class="font-serif text-xl text-white tracking-wider uppercase mb-1 group-hover:text-brand-gold-light smooth-transition">Festival Mehndi</h3>
+              <span class="font-serif italic text-xs text-brand-gold/70 block mb-4">Auspicious Celebrations</span>
+              <p class="font-sans text-brand-cream/70 text-xs leading-relaxed mb-6 font-light">Traditional festive circles and auspicious designs created for Karwa Chauth, Teej, Diwali, Eid, and Rakhi celebrations.</p>
+            </div>
+            <ul class="space-y-2 pt-4 border-t border-brand-gold/10 text-[11px] text-white/70 font-sans font-light">
+              <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-brand-gold"></span>Traditional round mandala palms</li>
+              <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-brand-gold"></span>Special festive seasonal rates</li>
+              <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-brand-gold"></span>Fast application turnarounds</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Featured Work Section -->
+    <section id="featured" class="py-24 md:py-32 bg-brand-green-dark relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        
+        <div class="max-w-3xl mb-24">
+          <span class="font-sans text-[10px] tracking-[0.4em] uppercase text-brand-gold font-semibold block mb-3">MASTERPIECE PORTFOLIO</span>
+          <h2 class="font-serif text-3xl md:text-5xl text-white tracking-wide uppercase leading-tight mb-4">
+            Featured <span class="text-brand-gold font-light">Work Showcase</span>
+          </h2>
+          <div class="w-16 h-[1px] bg-brand-gold mb-6"></div>
+          <p class="font-sans text-brand-cream/60 text-sm font-light max-w-xl">
+            A deeper look at our signature, award-winning mehndi designs. Each design takes hours of patient craftsmanship, ensuring a beautiful visual story.
+          </p>
+        </div>
+
+        <div class="space-y-32">
+          <!-- Featured 1 -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            <div class="lg:col-span-6">
+              <div class="relative aspect-[4/5] rounded overflow-hidden group shadow-2xl border border-brand-gold/10">
+                <div class="absolute inset-5 border border-brand-gold/15 group-hover:border-brand-gold/40 z-10 pointer-events-none smooth-transition"></div>
+                <img src="./src/assets/images/mehndi_figures_1784045484243.jpg" alt="Bridal Portraits" class="w-full h-full object-cover smooth-transition group-hover:scale-105" />
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-green-dark/80 via-brand-green-dark/20 to-transparent"></div>
+              </div>
+            </div>
+            <div class="lg:col-span-6 flex flex-col justify-center">
+              <div class="font-mono text-xs text-brand-gold font-medium mb-4 flex items-center gap-2">
+                <i data-lucide="star" class="w-3 h-3 fill-brand-gold text-brand-gold"></i>
+                <span>FEATURED MASTERPIECE 01</span>
+              </div>
+              <span class="font-sans text-[11px] uppercase tracking-widest text-brand-gold font-semibold mb-2 block">Signature Bridal Design</span>
+              <h3 class="font-serif text-2xl md:text-4xl text-white tracking-wide uppercase leading-tight mb-6">The Royal Bridal Portraits</h3>
+              <p class="font-sans text-brand-cream/80 text-sm leading-relaxed mb-6 font-light">
+                A grand architectural-inspired bridal mehndi showcasing symmetrical, hand-drawn silhouettes of the bride and groom standing inside elegant temple arches. Includes customized symbols of doli and shehnai, surrounded by delicate foliage trails and intricate lace bands.
+              </p>
+              <ul class="space-y-3 mb-8 border-t border-brand-gold/10 pt-6 text-xs text-brand-cream/70 font-sans font-light">
+                <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>Over 18 hours of detailed planning & curation</li>
+                <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>Rajasthani style hand-drawn silhouettes</li>
+                <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>Organic deep-maroon stain results guaranteed</li>
+              </ul>
+              <a href="#contact" class="scroll-link inline-flex items-center gap-2 font-sans text-xs text-brand-gold uppercase tracking-widest font-semibold hover:text-white smooth-transition py-1 border-b border-brand-gold/20 hover:border-white w-fit">
+                Consult for this design <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Featured 2 -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center lg:flex-row-reverse">
+            <div class="lg:col-span-6 lg:order-2">
+              <div class="relative aspect-[4/5] rounded overflow-hidden group shadow-2xl border border-brand-gold/10">
+                <div class="absolute inset-5 border border-brand-gold/15 group-hover:border-brand-gold/40 z-10 pointer-events-none smooth-transition"></div>
+                <img src="./src/assets/images/mehndi_traditional_1784045452077.jpg" alt="Concentric Mandalas" class="w-full h-full object-cover smooth-transition group-hover:scale-105" />
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-green-dark/80 via-brand-green-dark/20 to-transparent"></div>
+              </div>
+            </div>
+            <div class="lg:col-span-6 lg:order-1 flex flex-col justify-center">
+              <div class="font-mono text-xs text-brand-gold font-medium mb-4 flex items-center gap-2">
+                <i data-lucide="star" class="w-3 h-3 fill-brand-gold text-brand-gold"></i>
+                <span>FEATURED MASTERPIECE 02</span>
+              </div>
+              <span class="font-sans text-[11px] uppercase tracking-widest text-brand-gold font-semibold mb-2 block">Traditional Indian Art</span>
+              <h3 class="font-serif text-2xl md:text-4xl text-white tracking-wide uppercase leading-tight mb-6">The Peacock Mandala Symphony</h3>
+              <p class="font-sans text-brand-cream/80 text-sm leading-relaxed mb-6 font-light">
+                An elegant traditional masterpiece centering dual symmetric peacocks with gorgeous feather plumes on the palms, extending into a sequence of concentric mandalas and fine wristbands on the forearms. Features crisp line weights and absolute alignment.
+              </p>
+              <ul class="space-y-3 mb-8 border-t border-brand-gold/10 pt-6 text-xs text-brand-cream/70 font-sans font-light">
+                <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>Highly dense traditional Indian pattern</li>
+                <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>Custom peacock feathers detailing</li>
+                <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>Divine eucalyptus aromatic finish</li>
+              </ul>
+              <a href="#contact" class="scroll-link inline-flex items-center gap-2 font-sans text-xs text-brand-gold uppercase tracking-widest font-semibold hover:text-white smooth-transition py-1 border-b border-brand-gold/20 hover:border-white w-fit">
+                Consult for this design <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 8. Why Choose Us -->
+    <section id="why-choose" class="py-24 bg-brand-green relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+          <span class="font-sans text-[10px] tracking-[0.4em] uppercase text-brand-gold font-semibold block mb-3">OUR DISTINCTION</span>
+          <h2 class="font-serif text-3xl md:text-5xl text-white tracking-wide uppercase leading-tight mb-4">
+            Why Choose <span class="text-brand-gold font-light">Gaurav Mehndi</span>
+          </h2>
+          <div class="w-16 h-[1px] bg-brand-gold mx-auto mb-6"></div>
+          <p class="font-sans text-brand-cream/70 text-sm font-light leading-relaxed">
+            We don’t just apply henna—we design unforgettable royal experiences centered on safety, comfort, and unmatched fine-line craftsmanship.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Item 1 -->
+          <div class="p-8 rounded-lg bg-brand-green-dark/40 border border-brand-gold/10 smooth-transition flex gap-5 group hover:bg-brand-green-dark/60">
+            <div class="p-3.5 bg-brand-green/30 rounded border border-brand-gold/10 group-hover:bg-brand-gold/10 group-hover:border-brand-gold/40 smooth-transition h-fit shrink-0">
+              <i data-lucide="palette" class="w-6 h-6 text-brand-gold"></i>
+            </div>
+            <div>
+              <h3 class="font-serif text-lg text-white tracking-wide uppercase mb-2 group-hover:text-brand-gold smooth-transition">Professional Designs</h3>
+              <p class="font-sans text-brand-cream/60 text-xs font-light leading-relaxed">Symmetric, meticulous and crisp designs combining Indian motifs, negative spaces, and customized figures.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="p-8 rounded-lg bg-brand-green-dark/40 border border-brand-gold/10 smooth-transition flex gap-5 group hover:bg-brand-green-dark/60">
+            <div class="p-3.5 bg-brand-green/30 rounded border border-brand-gold/10 group-hover:bg-brand-gold/10 group-hover:border-brand-gold/40 smooth-transition h-fit shrink-0">
+              <i data-lucide="gem" class="w-6 h-6 text-brand-gold"></i>
+            </div>
+            <div>
+              <h3 class="font-serif text-lg text-white tracking-wide uppercase mb-2 group-hover:text-brand-gold smooth-transition">Premium Quality</h3>
+              <p class="font-sans text-brand-cream/60 text-xs font-light leading-relaxed">Pure therapeutic grade organic henna paste with calming soothing eucalyptus aroma oils.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="p-8 rounded-lg bg-brand-green-dark/40 border border-brand-gold/10 smooth-transition flex gap-5 group hover:bg-brand-green-dark/60">
+            <div class="p-3.5 bg-brand-green/30 rounded border border-brand-gold/10 group-hover:bg-brand-gold/10 group-hover:border-brand-gold/40 smooth-transition h-fit shrink-0">
+              <i data-lucide="map-pin" class="w-6 h-6 text-brand-gold"></i>
+            </div>
+            <div>
+              <h3 class="font-serif text-lg text-white tracking-wide uppercase mb-2 group-hover:text-brand-gold smooth-transition">Home Service</h3>
+              <p class="font-sans text-brand-cream/60 text-xs font-light leading-relaxed">Relax at home. Our professional artists travel straight to your venue fully equipped.</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="p-8 rounded-lg bg-brand-green-dark/40 border border-brand-gold/10 smooth-transition flex gap-5 group hover:bg-brand-green-dark/60">
+            <div class="p-3.5 bg-brand-green/30 rounded border border-brand-gold/10 group-hover:bg-brand-gold/10 group-hover:border-brand-gold/40 smooth-transition h-fit shrink-0">
+              <i data-lucide="sparkles" class="w-6 h-6 text-brand-gold"></i>
+            </div>
+            <div>
+              <h3 class="font-serif text-lg text-white tracking-wide uppercase mb-2 group-hover:text-brand-gold smooth-transition">Affordable Packages</h3>
+              <p class="font-sans text-brand-cream/60 text-xs font-light leading-relaxed">Transparent tailored layouts pricing to suit your bridal party without dropping quality.</p>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="p-8 rounded-lg bg-brand-green-dark/40 border border-brand-gold/10 smooth-transition flex gap-5 group hover:bg-brand-green-dark/60">
+            <div class="p-3.5 bg-brand-green/30 rounded border border-brand-gold/10 group-hover:bg-brand-gold/10 group-hover:border-brand-gold/40 smooth-transition h-fit shrink-0">
+              <i data-lucide="user-check" class="w-6 h-6 text-brand-gold"></i>
+            </div>
+            <div>
+              <h3 class="font-serif text-lg text-white tracking-wide uppercase mb-2 group-hover:text-brand-gold smooth-transition">Experienced Artist</h3>
+              <p class="font-sans text-brand-cream/60 text-xs font-light leading-relaxed">Led by Gaurav with over 12 years of core Indian luxury wedding industry experience.</p>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="p-8 rounded-lg bg-brand-green-dark/40 border border-brand-gold/10 smooth-transition flex gap-5 group hover:bg-brand-green-dark/60">
+            <div class="p-3.5 bg-brand-green/30 rounded border border-brand-gold/10 group-hover:bg-brand-gold/10 group-hover:border-brand-gold/40 smooth-transition h-fit shrink-0">
+              <i data-lucide="calendar-days" class="w-6 h-6 text-brand-gold"></i>
+            </div>
+            <div>
+              <h3 class="font-serif text-lg text-white tracking-wide uppercase mb-2 group-hover:text-brand-gold smooth-transition">On-time Booking</h3>
+              <p class="font-sans text-brand-cream/60 text-xs font-light leading-relaxed">Strictly punctual schedules, arriving on time to let your wedding schedule flow beautifully.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Gallery Section -->
+    <section id="gallery" class="py-24 md:py-32 bg-brand-green-dark relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="font-sans text-[10px] tracking-[0.4em] uppercase text-brand-gold font-semibold block mb-3">FINE ART PORTFOLIO</span>
+          <h2 class="font-serif text-3xl md:text-5xl text-white tracking-wide uppercase leading-tight mb-4">
+            The Luxury <span class="text-brand-gold font-light">Gallery</span>
+          </h2>
+          <div class="w-16 h-[1px] bg-brand-gold mx-auto mb-6"></div>
+          <p class="font-sans text-brand-cream/70 text-sm font-light leading-relaxed">
+            Click on any image to step into the details. Each photograph captures the crisp stain, delicate geometry, and fluid curves of Gaurav’s creations.
+          </p>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="flex flex-wrap justify-center items-center gap-3 md:gap-5 mb-16">
+          <button onclick="filterGallery('all')" class="gallery-tab px-5 py-2.5 font-sans text-[10px] md:text-xs uppercase tracking-widest smooth-transition rounded bg-brand-gold text-brand-green-dark font-bold border border-brand-gold">All Masterpieces</button>
+          <button onclick="filterGallery('bridal')" class="gallery-tab px-5 py-2.5 font-sans text-[10px] md:text-xs uppercase tracking-widest smooth-transition rounded text-white/80 border border-brand-gold/15 hover:border-brand-gold hover:text-white bg-transparent">Bridal Henna</button>
+          <button onclick="filterGallery('arabic')" class="gallery-tab px-5 py-2.5 font-sans text-[10px] md:text-xs uppercase tracking-widest smooth-transition rounded text-white/80 border border-brand-gold/15 hover:border-brand-gold hover:text-white bg-transparent">Arabic Flow</button>
+          <button onclick="filterGallery('traditional')" class="gallery-tab px-5 py-2.5 font-sans text-[10px] md:text-xs uppercase tracking-widest smooth-transition rounded text-white/80 border border-brand-gold/15 hover:border-brand-gold hover:text-white bg-transparent">Traditional Mandalas</button>
+        </div>
+
+        <!-- Masonry Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="standalone-grid">
+          <!-- Item 1 -->
+          <div class="gallery-item-card bridal relative cursor-pointer rounded-lg overflow-hidden group shadow-lg border border-brand-gold/5 bg-brand-green/20 lg:col-span-1 lg:row-span-2" onclick="openLightbox(0)">
+            <div class="absolute inset-4 border border-brand-gold/0 group-hover:border-brand-gold/35 z-20 pointer-events-none smooth-transition rounded"></div>
+            <div class="relative overflow-hidden w-full h-full aspect-[3/4] lg:aspect-auto lg:h-[720px]">
+              <img src="./src/assets/images/mehndi_figures_1784045484243.jpg" class="w-full h-full object-cover transform scale-100 group-hover:scale-110 smooth-transition" />
+              <div class="absolute inset-0 bg-brand-green-dark/80 opacity-0 group-hover:opacity-100 smooth-transition flex flex-col justify-end p-8 z-10">
+                <span class="font-sans text-[10px] uppercase tracking-widest text-brand-gold font-semibold block mb-1">Bridal Masterpiece</span>
+                <h4 class="font-serif text-xl text-white tracking-wide uppercase mb-2">Royal Bridal Portrait</h4>
+                <p class="font-sans text-brand-cream/60 text-xs leading-relaxed font-light line-clamp-2">Exquisite hand-drawn portraits of the bride and groom, inside detailed temple pillars.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="gallery-item-card bridal relative cursor-pointer rounded-lg overflow-hidden group shadow-lg border border-brand-gold/5 bg-brand-green/20" onclick="openLightbox(1)">
+            <div class="absolute inset-4 border border-brand-gold/0 group-hover:border-brand-gold/35 z-20 pointer-events-none smooth-transition rounded"></div>
+            <div class="relative overflow-hidden w-full h-full aspect-[4/3]">
+              <img src="./src/assets/images/mehndi_bridal_1784045431694.jpg" class="w-full h-full object-cover transform scale-100 group-hover:scale-110 smooth-transition" />
+              <div class="absolute inset-0 bg-brand-green-dark/80 opacity-0 group-hover:opacity-100 smooth-transition flex flex-col justify-end p-8 z-10">
+                <span class="font-sans text-[10px] uppercase tracking-widest text-brand-gold font-semibold block mb-1">Bridal Masterpiece</span>
+                <h4 class="font-serif text-xl text-white tracking-wide uppercase mb-2">Intricate Bridal Arms</h4>
+                <p class="font-sans text-brand-cream/60 text-xs leading-relaxed font-light line-clamp-2">Detailed symmetric layout on forearms mixing peacock tails and wristband trims.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="gallery-item-card traditional relative cursor-pointer rounded-lg overflow-hidden group shadow-lg border border-brand-gold/5 bg-brand-green/20" onclick="openLightbox(2)">
+            <div class="absolute inset-4 border border-brand-gold/0 group-hover:border-brand-gold/35 z-20 pointer-events-none smooth-transition rounded"></div>
+            <div class="relative overflow-hidden w-full h-full aspect-[4/3]">
+              <img src="./src/assets/images/mehndi_traditional_1784045452077.jpg" class="w-full h-full object-cover transform scale-100 group-hover:scale-110 smooth-transition" />
+              <div class="absolute inset-0 bg-brand-green-dark/80 opacity-0 group-hover:opacity-100 smooth-transition flex flex-col justify-end p-8 z-10">
+                <span class="font-sans text-[10px] uppercase tracking-widest text-brand-gold font-semibold block mb-1">Traditional Masterpiece</span>
+                <h4 class="font-serif text-xl text-white tracking-wide uppercase mb-2">The Sovereign Mandala</h4>
+                <p class="font-sans text-brand-cream/60 text-xs leading-relaxed font-light line-clamp-2">Sacred geometric central mandala aligned with absolute linework accuracy.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="gallery-item-card arabic relative cursor-pointer rounded-lg overflow-hidden group shadow-lg border border-brand-gold/5 bg-brand-green/20" onclick="openLightbox(3)">
+            <div class="absolute inset-4 border border-brand-gold/0 group-hover:border-brand-gold/35 z-20 pointer-events-none smooth-transition rounded"></div>
+            <div class="relative overflow-hidden w-full h-full aspect-[4/3]">
+              <img src="./src/assets/images/mehndi_arabic_1784045469272.jpg" class="w-full h-full object-cover transform scale-100 group-hover:scale-110 smooth-transition" />
+              <div class="absolute inset-0 bg-brand-green-dark/80 opacity-0 group-hover:opacity-100 smooth-transition flex flex-col justify-end p-8 z-10">
+                <span class="font-sans text-[10px] uppercase tracking-widest text-brand-gold font-semibold block mb-1">Arabic Masterpiece</span>
+                <h4 class="font-serif text-xl text-white tracking-wide uppercase mb-2">Modern Arabic Vine</h4>
+                <p class="font-sans text-brand-cream/60 text-xs leading-relaxed font-light line-clamp-2">Clean skin gaps forming high-contrast with thick leafy diagonal branches.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="gallery-item-card traditional relative cursor-pointer rounded-lg overflow-hidden group shadow-lg border border-brand-gold/5 bg-brand-green/20" onclick="openLightbox(4)">
+            <div class="absolute inset-4 border border-brand-gold/0 group-hover:border-brand-gold/35 z-20 pointer-events-none smooth-transition rounded"></div>
+            <div class="relative overflow-hidden w-full h-full aspect-[4/3]">
+              <img src="./src/assets/images/mehndi_hero_1784045414813.jpg" class="w-full h-full object-cover transform scale-100 group-hover:scale-110 smooth-transition" />
+              <div class="absolute inset-0 bg-brand-green-dark/80 opacity-0 group-hover:opacity-100 smooth-transition flex flex-col justify-end p-8 z-10">
+                <span class="font-sans text-[10px] uppercase tracking-widest text-brand-gold font-semibold block mb-1">Traditional Masterpiece</span>
+                <h4 class="font-serif text-xl text-white tracking-wide uppercase mb-2">Aromatic Henna Prep</h4>
+                <p class="font-sans text-brand-cream/60 text-xs leading-relaxed font-light line-clamp-2">Crisp, micro-thin lines glowing under premium bridal preparation lights.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Testimonials Section -->
+    <section id="testimonials" class="py-24 md:py-32 bg-brand-green relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+          <span class="font-sans text-[10px] tracking-[0.4em] uppercase text-brand-gold font-semibold block mb-3">LOVING WORDS FROM CLIENTS</span>
+          <h2 class="font-serif text-3xl md:text-5xl text-white tracking-wide uppercase leading-tight mb-4">
+            Bride <span class="text-brand-gold font-light">Testimonials</span>
+          </h2>
+          <div class="w-16 h-[1px] bg-brand-gold mx-auto mb-6"></div>
+          <p class="font-sans text-brand-cream/70 text-sm font-light leading-relaxed">
+            Discover why so many families trust Gaurav to bring fine-line elegance and beautiful blessings to their most sacred life celebrations.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div class="p-8 rounded-lg bg-brand-green-dark/40 border border-brand-gold/10 flex flex-col justify-between group smooth-transition relative">
+            <div class="absolute top-6 right-6 text-brand-gold/10 group-hover:text-brand-gold/20 smooth-transition">
+              <i data-lucide="quote" class="w-8 h-8 transform rotate-180"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-1 mb-6 text-brand-gold">
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i>
+              </div>
+              <p class="font-sans text-brand-cream/80 text-xs md:text-sm leading-relaxed mb-8 italic font-light">
+                "Gaurav is a true magician! My bridal mehndi was exactly what I had dreamed of—highly detailed, symmetrical, and featuring our custom portrait figures. The eucalyptus aroma of his fresh organic henna paste was so calming, and the stain became an incredibly deep, rich mahogany color."
+              </p>
+            </div>
+            <div class="flex items-center gap-4 pt-6 border-t border-brand-gold/10">
+              <div class="w-10 h-10 rounded-full bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold"><i data-lucide="heart" class="w-4 h-4 fill-brand-gold/10"></i></div>
+              <div>
+                <h4 class="font-serif text-white text-sm uppercase tracking-wider font-semibold">Aditi Sharma</h4>
+                <span class="text-[10px] text-brand-gold/70 font-sans font-light tracking-wider block">Royal Bride &bull; Umaid Bhawan Palace, Jodhpur</span>
+                <span class="text-white/40 text-[9px] font-sans">Dec 2025</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="p-8 rounded-lg bg-brand-green-dark/40 border border-brand-gold/10 flex flex-col justify-between group smooth-transition relative">
+            <div class="absolute top-6 right-6 text-brand-gold/10 group-hover:text-brand-gold/20 smooth-transition">
+              <i data-lucide="quote" class="w-8 h-8 transform rotate-180"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-1 mb-6 text-brand-gold">
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i>
+              </div>
+              <p class="font-sans text-brand-cream/80 text-xs md:text-sm leading-relaxed mb-8 italic font-light">
+                "If you want premium, luxury-grade mehndi work, look no further than Gaurav. He was extremely patient, spending hours to draw a symmetrical mandala on my palms with immaculate precision. All my guests were stunned by how clean his lines were. He is exceptionally professional."
+              </p>
+            </div>
+            <div class="flex items-center gap-4 pt-6 border-t border-brand-gold/10">
+              <div class="w-10 h-10 rounded-full bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold"><i data-lucide="heart" class="w-4 h-4 fill-brand-gold/10"></i></div>
+              <div>
+                <h4 class="font-serif text-white text-sm uppercase tracking-wider font-semibold">Priyanka Patel</h4>
+                <span class="text-[10px] text-brand-gold/70 font-sans font-light tracking-wider block">Contemporary Bride &bull; Grand Hyatt, Goa</span>
+                <span class="text-white/40 text-[9px] font-sans">Nov 2025</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="p-8 rounded-lg bg-brand-green-dark/40 border border-brand-gold/10 flex flex-col justify-between group smooth-transition relative">
+            <div class="absolute top-6 right-6 text-brand-gold/10 group-hover:text-brand-gold/20 smooth-transition">
+              <i data-lucide="quote" class="w-8 h-8 transform rotate-180"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-1 mb-6 text-brand-gold">
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-brand-gold"></i>
+              </div>
+              <p class="font-sans text-brand-cream/80 text-xs md:text-sm leading-relaxed mb-8 italic font-light">
+                "We booked Gaurav for our entire family’s Karwa Chauth festival ceremony. His designs were incredibly unique, marrying modern Arabic spacing with traditional Indian motifs. His home-service setup was so organized and clean, keeping everyone comfortable."
+              </p>
+            </div>
+            <div class="flex items-center gap-4 pt-6 border-t border-brand-gold/10">
+              <div class="w-10 h-10 rounded-full bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold"><i data-lucide="heart" class="w-4 h-4 fill-brand-gold/10"></i></div>
+              <div>
+                <h4 class="font-serif text-white text-sm uppercase tracking-wider font-semibold">Meera Deshmukh</h4>
+                <span class="text-[10px] text-brand-gold/70 font-sans font-light tracking-wider block">Festive Client &bull; Taj Lands End, Mumbai</span>
+                <span class="text-white/40 text-[9px] font-sans">Oct 2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 11. Contact Section -->
+    <section id="contact" class="py-24 md:py-32 bg-brand-green-dark relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+          <span class="font-sans text-[10px] tracking-[0.4em] uppercase text-brand-gold font-semibold block mb-3">BOOKING & ENQUIRIES</span>
+          <h2 class="font-serif text-3xl md:text-5xl text-white tracking-wide uppercase leading-tight mb-4">
+            Begin Your <span class="text-brand-gold font-light">Journey</span>
+          </h2>
+          <div class="w-16 h-[1px] bg-brand-gold mx-auto mb-6"></div>
+          <p class="font-sans text-brand-cream/70 text-sm font-light leading-relaxed">
+            Reserve your wedding date or schedule a custom consultation. Share your event details, and let’s design a masterpiece together.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <!-- Left Details Column -->
+          <div class="lg:col-span-5 flex flex-col justify-between">
+            <div class="space-y-6">
+              <h3 class="font-serif text-2xl text-white uppercase tracking-wider mb-6">Connect With <span class="text-brand-gold font-light">Gaurav</span></h3>
+              <p class="font-sans text-brand-cream/60 text-xs md:text-sm leading-relaxed mb-8 font-light">
+                Our customer experience desk is available 24/7 to help you book dates, plan guest counts, or answer questions about stain preparation. Feel free to call, WhatsApp, or drop an email.
+              </p>
+
+              <div class="space-y-4">
+                <!-- Phone -->
+                <a href="tel:+919800000000" class="flex items-center gap-4 p-4 rounded bg-brand-green/15 border border-brand-gold/10 hover:border-brand-gold/30 hover:bg-brand-green/25 smooth-transition">
+                  <div class="w-10 h-10 rounded-full bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold"><i data-lucide="phone" class="w-5 h-5"></i></div>
+                  <div>
+                    <span class="font-sans text-[10px] text-white/50 uppercase tracking-widest block mb-1">Call Us</span>
+                    <span class="font-serif text-white text-sm tracking-wider font-medium">+91 98XXX XXXXX</span>
+                  </div>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/919800000000" class="flex items-center gap-4 p-4 rounded bg-brand-green/15 border border-brand-gold/10 hover:border-brand-gold/30 hover:bg-brand-green/25 smooth-transition">
+                  <div class="w-10 h-10 rounded-full bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold"><i data-lucide="smartphone" class="w-5 h-5"></i></div>
+                  <div>
+                    <span class="font-sans text-[10px] text-white/50 uppercase tracking-widest block mb-1">WhatsApp</span>
+                    <span class="font-serif text-white text-sm tracking-wider font-medium">+91 98XXX XXXXX</span>
+                  </div>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:gaurav.mehndi@example.com" class="flex items-center gap-4 p-4 rounded bg-brand-green/15 border border-brand-gold/10 hover:border-brand-gold/30 hover:bg-brand-green/25 smooth-transition">
+                  <div class="w-10 h-10 rounded-full bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold"><i data-lucide="mail" class="w-5 h-5"></i></div>
+                  <div>
+                    <span class="font-sans text-[10px] text-white/50 uppercase tracking-widest block mb-1">Email Address</span>
+                    <span class="font-serif text-white text-sm tracking-wider font-medium">gaurav.mehndi@example.com</span>
+                  </div>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://instagram.com" target="_blank" class="flex items-center gap-4 p-4 rounded bg-brand-green/15 border border-brand-gold/10 hover:border-brand-gold/30 hover:bg-brand-green/25 smooth-transition">
+                  <div class="w-10 h-10 rounded-full bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold"><i data-lucide="instagram" class="w-5 h-5"></i></div>
+                  <div>
+                    <span class="font-sans text-[10px] text-white/50 uppercase tracking-widest block mb-1">Instagram</span>
+                    <span class="font-serif text-white text-sm tracking-wider font-medium">@GauravMehndiArtist</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="mt-8 p-4 rounded bg-brand-green/10 border border-brand-gold/5 flex items-center gap-4">
+              <div class="w-10 h-10 rounded bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
+              <div>
+                <h5 class="font-serif text-white text-xs uppercase tracking-wider">Service Coverage</h5>
+                <p class="font-sans text-white/50 text-[10px] leading-relaxed font-light">Serving Agra, Jaipur, Delhi NCR, Lucknow, and destination weddings globally.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Booking Form Column -->
+          <div class="lg:col-span-7">
+            <div class="glass-panel p-8 md:p-10 rounded-lg relative overflow-hidden">
+              <form id="standalone-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                <h3 class="font-serif text-xl text-white uppercase tracking-wider mb-8">Request Consultation</h3>
+
+                <div>
+                  <label class="font-sans text-[10px] text-brand-gold uppercase tracking-widest font-semibold block mb-2">Your Full Name *</label>
+                  <input type="text" id="form-name" required placeholder="e.g. Aditi Sharma" class="w-full px-4 py-3 bg-brand-green-dark/80 text-white placeholder-white/30 border border-brand-gold/15 focus:border-brand-gold focus:outline-none rounded text-xs smooth-transition font-sans" />
+                  <p id="err-name" class="text-red-400 font-sans text-[10px] mt-1.5 hidden"></p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="font-sans text-[10px] text-brand-gold uppercase tracking-widest font-semibold block mb-2">Phone Number *</label>
+                    <input type="tel" id="form-phone" required placeholder="e.g. +91 99999 99999" class="w-full px-4 py-3 bg-brand-green-dark/80 text-white placeholder-white/30 border border-brand-gold/15 focus:border-brand-gold focus:outline-none rounded text-xs smooth-transition font-sans" />
+                    <p id="err-phone" class="text-red-400 font-sans text-[10px] mt-1.5 hidden"></p>
+                  </div>
+                  <div>
+                    <label class="font-sans text-[10px] text-brand-gold uppercase tracking-widest font-semibold block mb-2">Email Address *</label>
+                    <input type="email" id="form-email" required placeholder="e.g. aditi@example.com" class="w-full px-4 py-3 bg-brand-green-dark/80 text-white placeholder-white/30 border border-brand-gold/15 focus:border-brand-gold focus:outline-none rounded text-xs smooth-transition font-sans" />
+                    <p id="err-email" class="text-red-400 font-sans text-[10px] mt-1.5 hidden"></p>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="font-sans text-[10px] text-brand-gold uppercase tracking-widest font-semibold block mb-2">Event Details & Message *</label>
+                  <textarea id="form-msg" required rows="5" placeholder="Please include wedding date, venue, guest counts, and design preferences..." class="w-full px-4 py-3 bg-brand-green-dark/80 text-white placeholder-white/30 border border-brand-gold/15 focus:border-brand-gold focus:outline-none rounded text-xs smooth-transition font-sans resize-none"></textarea>
+                  <p id="err-msg" class="text-red-400 font-sans text-[10px] mt-1.5 hidden"></p>
+                </div>
+
+                <button type="submit" class="w-full py-4 bg-brand-gold hover:bg-brand-gold-light text-brand-green-dark font-sans text-xs uppercase tracking-widest font-bold rounded shadow-lg transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer">
+                  <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                  <span>Request Booking Details</span>
+                </button>
+              </form>
+
+              <!-- Success Overlay Box -->
+              <div id="form-success" class="absolute inset-0 bg-brand-green-dark flex flex-col items-center justify-center text-center p-8 space-y-6 hidden smooth-transition">
+                <div class="w-16 h-16 rounded-full bg-brand-gold/10 border border-brand-gold flex items-center justify-center text-brand-gold">
+                  <i data-lucide="check-circle" class="w-8 h-8"></i>
+                </div>
+                <div>
+                  <h4 class="font-serif text-2xl text-white uppercase tracking-wider mb-3">Thank You!</h4>
+                  <p class="font-sans text-brand-cream/80 text-sm max-w-sm leading-relaxed font-light">
+                    We have successfully received your request. Gaurav’s bridal relationship desk will contact you soon.
+                  </p>
+                </div>
+                <button onclick="resetForm()" class="px-6 py-2.5 border border-brand-gold/30 text-brand-gold hover:border-brand-gold hover:text-white hover:bg-brand-gold/10 font-sans text-[10px] uppercase tracking-widest transition-all rounded">Submit another request</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Footer -->
+    <footer class="bg-brand-green-dark border-t border-brand-gold/15 pt-16 pb-8 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-brand-gold/10">
+          
+          <!-- Column 1 Logo -->
+          <div class="md:col-span-5 space-y-6">
+            <a href="#home" class="scroll-link flex items-center gap-2 group cursor-pointer w-fit">
+              <div class="w-12 h-12 rounded-full border border-brand-gold/50 flex items-center justify-center bg-brand-green/30">
+                <span class="text-brand-gold font-serif text-xl font-medium">G</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-serif text-brand-gold font-medium tracking-widest text-lg md:text-xl uppercase leading-none">Gaurav</span>
+                <span class="font-sans text-[10px] text-white/50 tracking-[0.25em] uppercase mt-1">Mehndi Artist</span>
+              </div>
+            </a>
+            
+            <p class="font-sans text-brand-cream/60 text-xs md:text-sm leading-relaxed max-w-sm font-light">
+              Crafting premium, symmetric traditional and contemporary bridal mehndi masterpieces since 2014. Using only premium 100% organic, chemical-free henna formulas for rich, long-lasting color.
+            </p>
+
+            <div class="flex items-center gap-3 text-white/70">
+              <a href="https://instagram.com" class="w-9 h-9 rounded-full border border-brand-gold/20 hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/5 flex items-center justify-center smooth-transition"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+              <a href="https://facebook.com" class="w-9 h-9 rounded-full border border-brand-gold/20 hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/5 flex items-center justify-center smooth-transition"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+              <a href="https://wa.me/919800000000" class="w-9 h-9 rounded-full border border-brand-gold/20 hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/5 flex items-center justify-center smooth-transition"><i data-lucide="smartphone" class="w-4 h-4"></i></a>
+              <a href="mailto:gaurav.mehndi@example.com" class="w-9 h-9 rounded-full border border-brand-gold/20 hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/5 flex items-center justify-center smooth-transition"><i data-lucide="mail" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+
+          <!-- Column 2 Links -->
+          <div class="md:col-span-3 space-y-4">
+            <h4 class="font-serif text-brand-gold text-sm uppercase tracking-wider font-semibold">Quick Navigation</h4>
+            <div class="flex flex-col gap-2.5">
+              <a href="#home" class="scroll-link font-sans text-xs text-brand-cream/70 hover:text-brand-gold smooth-transition w-fit font-light">Home</a>
+              <a href="#about" class="scroll-link font-sans text-xs text-brand-cream/70 hover:text-brand-gold smooth-transition w-fit font-light">About Gaurav</a>
+              <a href="#services" class="scroll-link font-sans text-xs text-brand-cream/70 hover:text-brand-gold smooth-transition w-fit font-light">Our Services</a>
+              <a href="#featured" class="scroll-link font-sans text-xs text-brand-cream/70 hover:text-brand-gold smooth-transition w-fit font-light">Featured Work</a>
+              <a href="#gallery" class="scroll-link font-sans text-xs text-brand-cream/70 hover:text-brand-gold smooth-transition w-fit font-light">Portfolio Gallery</a>
+              <a href="#testimonials" class="scroll-link font-sans text-xs text-brand-cream/70 hover:text-brand-gold smooth-transition w-fit font-light">Testimonials</a>
+            </div>
+          </div>
+
+          <!-- Column 3 Info -->
+          <div class="md:col-span-4 space-y-4">
+            <h4 class="font-serif text-brand-gold text-sm uppercase tracking-wider font-semibold">Studio & Availability</h4>
+            <div class="space-y-3 font-sans text-xs text-brand-cream/70 font-light">
+              <p class="flex items-start gap-2">
+                <span class="text-brand-gold font-medium shrink-0">Coverage:</span>
+                <span>Agra, Rajasthan, Jaipur, Delhi NCR, Lucknow & Destination Weddings</span>
+              </p>
+              <p class="flex items-center gap-2">
+                <span className="text-brand-gold font-medium">Timing:</span>
+                <span>Open 24 Hours (Prior Reservation Required)</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between pt-8 mt-2 gap-4">
+          <p class="font-sans text-[10px] text-white/40 tracking-wider">
+            &copy; 2026 Gaurav Mehndi Artist. All Rights Reserved. &bull; Handcrafted with Luxury & Care
+          </p>
+
+          <a href="#home" class="scroll-link flex items-center gap-2 px-4 py-2 border border-brand-gold/30 hover:border-brand-gold bg-brand-green/20 rounded text-brand-gold hover:text-white hover:bg-brand-gold/10 font-sans text-[10px] uppercase tracking-widest font-semibold smooth-transition">
+            <span>Scroll To Top</span>
+            <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Immersive Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-brand-green-dark/98 backdrop-blur-lg flex items-center justify-center p-4 md:p-8 hidden smooth-transition">
+      <button onclick="closeLightbox()" class="absolute top-6 right-6 z-50 text-white/70 hover:text-brand-gold transition-all p-3 rounded-full border border-white/10 hover:border-brand-gold bg-brand-green/30">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-brand-green-dark border border-brand-gold/10 p-6 rounded-lg relative" onclick="event.stopPropagation()">
+        <!-- Image Box -->
+        <div class="lg:col-span-8 relative flex items-center justify-center h-[50vh] lg:h-[70vh] rounded overflow-hidden bg-black/25">
+          <button onclick="changeLightboxItem(-1)" class="absolute left-4 z-40 text-brand-gold hover:text-white p-3 rounded-full border border-brand-gold/20 hover:border-brand-gold bg-brand-green-dark/80 smooth-transition"><i data-lucide="chevron-left" class="w-6 h-6"></i></button>
+          <img id="lightbox-img" src="" class="max-h-full max-w-full object-contain rounded" />
+          <button onclick="changeLightboxItem(1)" class="absolute right-4 z-40 text-brand-gold hover:text-white p-3 rounded-full border border-brand-gold/20 hover:border-brand-gold bg-brand-green-dark/80 smooth-transition"><i data-lucide="chevron-right" class="w-6 h-6"></i></button>
+        </div>
+
+        <!-- Details Column -->
+        <div class="lg:col-span-4 text-left flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-brand-gold/10 pt-6 lg:pt-0 lg:pl-8">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-4 h-[1px] bg-brand-gold"></span>
+            <span id="lightbox-cat" class="font-sans text-[10px] tracking-widest uppercase text-brand-gold font-semibold"></span>
+          </div>
+          <h3 id="lightbox-title" class="font-serif text-2xl md:text-3xl text-white tracking-wide uppercase leading-tight mb-4"></h3>
+          <p id="lightbox-desc" class="font-sans text-brand-cream/80 text-sm leading-relaxed mb-6 font-light"></p>
+          <div class="p-4 bg-brand-green/20 rounded border border-brand-gold/10 mt-4">
+            <span class="font-serif text-brand-gold text-xs uppercase tracking-wider block mb-1">Authentic Guarantee</span>
+            <p class="font-sans text-white/50 text-[11px] leading-relaxed font-light">This design was fully hand-crafted by Gaurav and can be customized according to your bridal theme and color preferences.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13. Core Interactive Functionality Script -->
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Fade out Preloader on Window Load
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const loader = document.getElementById('preloader');
+          loader.classList.add('opacity-0', 'pointer-events-none');
+          
+          // Animate hero titles with GSAP
+          gsap.from("#home h1", { y: 60, opacity: 0, duration: 1.5, ease: "power4.out", delay: 0.5 });
+          gsap.from("#home p", { opacity: 0, duration: 2, delay: 1 });
+        }, 1200);
+      });
+
+      // Sticky Transparent Header and Active Links
+      window.addEventListener('scroll', () => {
+        const header = document.getElementById('main-header');
+        if (window.scrollY > 50) {
+          header.classList.add('bg-brand-green-dark/90', 'backdrop-blur-md', 'py-4', 'border-brand-gold/10', 'shadow-lg');
+          header.classList.remove('bg-transparent', 'py-6', 'border-transparent');
+        } else {
+          header.classList.remove('bg-brand-green-dark/90', 'backdrop-blur-md', 'py-4', 'border-brand-gold/10', 'shadow-lg');
+          header.classList.add('bg-transparent', 'py-6', 'border-transparent');
+        }
+      });
+
+      // Mobile drawer navigation toggler
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const drawer = document.getElementById('mobile-drawer');
+      let isDrawerOpen = false;
+
+      menuBtn.addEventListener('click', () => {
+        isDrawerOpen = !isDrawerOpen;
+        if (isDrawerOpen) {
+          drawer.classList.remove('max-h-0', 'opacity-0');
+          drawer.classList.add('max-h-[450px]', 'opacity-100', 'py-6');
+          document.getElementById('menu-icon').setAttribute('data-lucide', 'x');
+        } else {
+          drawer.classList.add('max-h-0', 'opacity-0');
+          drawer.classList.remove('max-h-[450px]', 'opacity-100', 'py-6');
+          document.getElementById('menu-icon').setAttribute('data-lucide', 'menu');
+        }
+        lucide.createIcons();
+      });
+
+      // Close mobile menu on link click
+      const scrollLinks = document.querySelectorAll('.scroll-link');
+      scrollLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          isDrawerOpen = false;
+          drawer.classList.add('max-h-0', 'opacity-0');
+          drawer.classList.remove('max-h-[450px]', 'opacity-100', 'py-6');
+          document.getElementById('menu-icon').setAttribute('data-lucide', 'menu');
+          lucide.createIcons();
+
+          // Intercept smooth scrolling
+          const targetId = link.getAttribute('href');
+          if (targetId.startsWith('#')) {
+            e.preventDefault();
+            const targetEl = document.querySelector(targetId);
+            if (targetEl) {
+              const offsetTop = targetEl.getBoundingClientRect().top + window.pageYOffset - 75;
+              window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+              });
+            }
+          }
+        });
+      });
+
+      // Interactive Custom Mouse Pointer Tracking (Desktop Only)
+      const cursorRing = document.getElementById('cursor-ring');
+      const cursorDot = document.getElementById('cursor-dot');
+      
+      window.addEventListener('mousemove', (e) => {
+        cursorRing.classList.remove('opacity-0');
+        cursorDot.classList.remove('opacity-0');
+        
+        // Adjust coordinate offset
+        cursorRing.style.left = e.clientX + 'px';
+        cursorRing.style.top = e.clientY + 'px';
+        cursorDot.style.left = e.clientX + 'px';
+        cursorDot.style.top = e.clientY + 'px';
+      });
+
+      // Expand custom cursor on hoverable nodes
+      const hoverables = document.querySelectorAll('a, button, .cursor-pointer, input, textarea');
+      hoverables.forEach(node => {
+        node.addEventListener('mouseenter', () => {
+          cursorRing.classList.add('scale-150', 'bg-brand-gold/10', 'border-brand-gold-light');
+        });
+        node.addEventListener('mouseleave', () => {
+          cursorRing.classList.remove('scale-150', 'bg-brand-gold/10', 'border-brand-gold-light');
+        });
+      });
+
+      // Gallery data for lightbox
+      const galleryData = [
+        {
+          title: 'Royal Bridal Portrait',
+          category: 'bridal',
+          image: './src/assets/images/mehndi_figures_1784045484243.jpg',
+          desc: 'An exquisite hand-drawn illustration of the bride and groom, framed by intricate temple pillars and micro-dot lace details on the palms.'
+        },
+        {
+          title: 'Intricate Bridal Arms',
+          category: 'bridal',
+          image: './src/assets/images/mehndi_bridal_1784045431694.jpg',
+          desc: 'Detailed symmetrical extensions climbing up the forearm, integrating traditional Rajasthani patterns, peacocks, and floral cuffs.'
+        },
+        {
+          title: 'The Sovereign Mandala',
+          category: 'traditional',
+          image: './src/assets/images/mehndi_traditional_1784045452077.jpg',
+          desc: 'A traditional Indian layout utilizing high-precision linework, concentric sacred geometric mandalas, and wrist bracelet finishes.'
+        },
+        {
+          title: 'Modern Arabic Vine',
+          category: 'arabic',
+          image: './src/assets/images/mehndi_arabic_1784045469272.jpg',
+          desc: 'A contemporary blend of thick leaf borders and delicate internal floral paths, leaving clean skin highlights to form striking contrast.'
+        },
+        {
+          title: 'Aromatic Henna Prep',
+          category: 'traditional',
+          image: './src/assets/images/mehndi_hero_1784045414813.jpg',
+          desc: 'A close-up shot capturing the incredible density and precision of fine-line detailing under luxury warm bridal lighting.'
+        }
+      ];
+
+      let currentImgIndex = 0;
+
+      function openLightbox(index) {
+        currentImgIndex = index;
+        const lightbox = document.getElementById('lightbox');
+        lightbox.classList.remove('hidden');
+        updateLightboxContent();
+      }
+
+      function closeLightbox() {
+        document.getElementById('lightbox').classList.add('hidden');
+      }
+
+      function changeLightboxItem(direction) {
+        currentImgIndex += direction;
+        if (currentImgIndex < 0) currentImgIndex = galleryData.length - 1;
+        if (currentImgIndex >= galleryData.length) currentImgIndex = 0;
+        updateLightboxContent();
+      }
+
+      function updateLightboxContent() {
+        const item = galleryData[currentImgIndex];
+        document.getElementById('lightbox-img').src = item.image;
+        document.getElementById('lightbox-title').innerText = item.title;
+        document.getElementById('lightbox-cat').innerText = item.category;
+        document.getElementById('lightbox-desc').innerText = item.desc;
+      }
+
+      // Close lightbox on backdrop click
+      document.getElementById('lightbox').addEventListener('click', () => {
+        closeLightbox();
+      });
+
+      // Gallery category filter
+      function filterGallery(category) {
+        const cards = document.querySelectorAll('.gallery-item-card');
+        const tabs = document.querySelectorAll('.gallery-tab');
+        
+        // Update active tab styling
+        tabs.forEach(tab => {
+          const tabLabel = tab.innerText.toLowerCase();
+          if ((category === 'all' && tabLabel.includes('all')) || 
+              (category === 'bridal' && tabLabel.includes('bridal')) ||
+              (category === 'arabic' && tabLabel.includes('arabic')) ||
+              (category === 'traditional' && tabLabel.includes('traditional'))) {
+            tab.className = "gallery-tab px-5 py-2.5 font-sans text-[10px] md:text-xs uppercase tracking-widest smooth-transition rounded bg-brand-gold text-brand-green-dark font-bold border border-brand-gold";
+          } else {
+            tab.className = "gallery-tab px-5 py-2.5 font-sans text-[10px] md:text-xs uppercase tracking-widest smooth-transition rounded text-white/80 border border-brand-gold/15 hover:border-brand-gold hover:text-white bg-transparent";
+          }
+        });
+
+        cards.forEach(card => {
+          if (category === 'all' || card.classList.contains(category)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      // Form validation & submission
+      function handleFormSubmit(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('form-name').value.trim();
+        const phone = document.getElementById('form-phone').value.trim();
+        const email = document.getElementById('form-email').value.trim();
+        const msg = document.getElementById('form-msg').value.trim();
+        
+        // Simple mock trigger submit animation
+        const formPanel = document.getElementById('standalone-form');
+        const successBox = document.getElementById('form-success');
+        
+        successBox.classList.remove('hidden');
+        // Clear inputs
+        document.getElementById('form-name').value = '';
+        document.getElementById('form-phone').value = '';
+        document.getElementById('form-email').value = '';
+        document.getElementById('form-msg').value = '';
+      }
+
+      function resetForm() {
+        document.getElementById('form-success').classList.add('hidden');
+      }
+
+      // Initialize Lenis Smooth Scroll
+      const lenis = new Lenis({
+        duration: 1.5,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+</html>

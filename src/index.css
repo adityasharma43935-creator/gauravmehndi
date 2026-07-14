@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Marcellus&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fira+Code:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Marcellus", serif;
+  --font-display: "Playfair Display", serif;
+  --font-mono: "Fira Code", monospace;
+
+  --color-brand-green: #0f3d2e;
+  --color-brand-green-dark: #072219;
+  --color-brand-green-light: #165340;
+  --color-brand-gold: #d4af37;
+  --color-brand-gold-dark: #aa861d;
+  --color-brand-gold-light: #f3e2a9;
+  --color-brand-cream: #fcf9f2;
+  --color-brand-cream-dark: #f5eedc;
+}
+
+/* Base custom styles */
+html.lenis {
+  height: auto;
+}
+
+.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Scrollbar for Luxury feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-green-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-gold-light);
+}
+
+/* Text selections */
+::selection {
+  background-color: var(--color-brand-gold);
+  color: var(--color-brand-green-dark);
+}
+
+/* Glassmorphism custom classes */
+.glass-panel {
+  background: rgba(15, 61, 46, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.glass-panel-light {
+  background: rgba(252, 249, 242, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+/* Custom glow animations */
+@keyframes gold-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+  }
+}
+
+.glow-gold {
+  animation: gold-glow 4s infinite ease-in-out;
+}
+
